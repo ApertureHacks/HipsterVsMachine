@@ -46,6 +46,7 @@ function run_game() {
     $hipster = $('#hipster');
     $robo.attr('src', '/static/imgs/robo_hit.png');
     $hipster.animate({marginRight: '-=10px'}, 0);
+    document.getElementById('punch').play();
     setTimeout(function() {
       $robo.attr('src', '/static/imgs/robo_stand.png');
       $hipster.animate({marginRight: '+=10px'}, 0);
@@ -57,6 +58,7 @@ function run_game() {
     $hipster = $('#hipster');
     $hipster.attr('src', '/static/imgs/hipster_hit.png');
     $robo.animate({marginLeft: '-=10px'}, 0);
+    document.getElementById('clank').play();
     setTimeout(function() {
       $hipster.attr('src', '/static/imgs/hipster_stand.png');
       $robo.animate({marginLeft: '+=10px'}, 0);
