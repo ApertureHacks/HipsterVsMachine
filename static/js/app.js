@@ -35,12 +35,28 @@ function run_game() {
   var rounds = 10;
   var round = 0;
 
+  var robot_attack = function() {
+    $('#robot').attr('src', '/static/imgs/robo_hit.png');
+    setTimeout(function() {
+      $('#robot').attr('src', '/static/imgs/robo_stand.png');
+    }, 500);
+  };
+
+  var hipster_attack = function() {
+    $('#hipster').attr('src', '/static/imgs/hipster_hit.png');
+    setTimeout(function() {
+      $('#hipster').attr('src', '/static/imgs/hipster_stand.png');
+    }, 500);
+  };
+
   var click_etsy = function() {
     votes.etsy++;
+    hipster_attack();
     next_round();
   };
   var click_shapeways = function() {
     votes.shapeways++;
+    robot_attack();
     next_round();
   };
 
@@ -48,6 +64,16 @@ function run_game() {
     console.log(round);
     console.log(votes);
     console.log(seen_items);
+
+    $('#battle-zone').css('display', 'none');
+
+    $('#right-image').attr('src', '/static/imgs/robo_stand.png');
+    $('#right-header').html('Machine: ' + votes.shapeways);
+    $('#right-name').html('');
+
+    $('#left-image').attr('src', '/static/imgs/hipster_stand.png');
+    $('#left-header').html('Hipster: ' + votes.etsy);
+    $('#left-name').html('');
 
     $('#results-table').css('display', '');
     for (var i = 0; i < seen_items.etsy.length; i++) {

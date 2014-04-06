@@ -9,8 +9,14 @@ img.item-image {
     margin: auto;
 }
 
+h1.picture-header {
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
 div.row-game {
-    margin-top: 75px;
+    margin-top: 50;
 }
 
 .item-name {
@@ -18,4 +24,18 @@ div.row-game {
     display: block;
     margin: auto;
     width: 300px;
+}
+
+img.fighter {
+    float: left;
+    max-height: 200px;
+}
+
+img#robot {
+    padding-bottom: 10px;
+    margin-left: 50px;
+}
+
+img#hipster {
+    margin-left: 40px;
 }
