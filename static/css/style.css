@@ -1,4 +1,21 @@
+body {
+    background-image: url('/static/imgs/squared_metal.png');
+    background-repeat: repeat;
+}
+
 img.item-image {
-    max-width: 300px;
-    max-height: 400px;
+    max-height: 200px;
+    display: block;
+    margin: auto;
+}
+
+div.row-game {
+    margin-top: 75px;
+}
+
+.item-name {
+    text-align: center;
+    display: block;
+    margin: auto;
+    width: 300px;
 }
