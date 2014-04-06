@@ -110,7 +110,8 @@ function run_game() {
     $('#right-button').off();
 
     if (round++ >= rounds) {
-      return endgame();
+      setTimeout(endgame, 750);
+      return;
     }
 
     var rand = Math.round(Math.random());
