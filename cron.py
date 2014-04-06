@@ -1,5 +1,6 @@
 from pymongo import MongoClient
 import shapeways
+import etsy
 
 client = MongoClient('localhost', 27017)
 db = client.hipstervsmachine
@@ -14,3 +15,9 @@ for category in SHAPEWAYS_CATEGORIES:
 if shapeways_results:
     db.shapeways.drop()
     db.shapeways.insert(shapeways_results)
+
+etsy_results = etsy.getListings()
+
+if etsy_results:
+    db.etsy.drop()
+    db.etsy.insert(etsy_results)
