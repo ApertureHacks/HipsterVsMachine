@@ -101,6 +101,8 @@ function run_game() {
       shapeways_link = '<a href="' + shapeways_item.url + '">' + shapeways_item.name + '</a>';
       $('#results-table').append('<tr><td>' + etsy_link + '</td><td>' + shapeways_link + '</td></tr>');
     }
+
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
   };
 
   var next_round = function() {
