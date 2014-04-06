@@ -19,12 +19,18 @@ function get_shapeways_item(callback) {
 
 function set_left(img, name, cb) {
   $('#left-image').attr('src', img);
+  if (name.length > 40) {
+    name = name.substring(0, 38) + '...';
+  }
   $('#left-name').html(name);
   $('#left-button').click(cb);
 }
 
 function set_right(img, name, cb) {
   $('#right-image').attr('src', img);
+  if (name.length > 40) {
+    name = name.substring(0, 38) + '...';
+  }
   $('#right-name').html(name);
   $('#right-button').click(cb);
 }
@@ -36,16 +42,24 @@ function run_game() {
   var round = 0;
 
   var robot_attack = function() {
-    $('#robot').attr('src', '/static/imgs/robo_hit.png');
+    $robo = $('#robot');
+    $hipster = $('#hipster');
+    $robo.attr('src', '/static/imgs/robo_hit.png');
+    $hipster.animate({marginRight: '-=10px'}, 0);
     setTimeout(function() {
-      $('#robot').attr('src', '/static/imgs/robo_stand.png');
+      $robo.attr('src', '/static/imgs/robo_stand.png');
+      $hipster.animate({marginRight: '+=10px'}, 0);
     }, 500);
   };
 
   var hipster_attack = function() {
-    $('#hipster').attr('src', '/static/imgs/hipster_hit.png');
+    $robo = $('#robot');
+    $hipster = $('#hipster');
+    $hipster.attr('src', '/static/imgs/hipster_hit.png');
+    $robo.animate({marginLeft: '-=10px'}, 0);
     setTimeout(function() {
-      $('#hipster').attr('src', '/static/imgs/hipster_stand.png');
+      $hipster.attr('src', '/static/imgs/hipster_stand.png');
+      $robo.animate({marginLeft: '+=10px'}, 0);
     }, 500);
   };
 
