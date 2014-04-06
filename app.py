@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from pymongo import MongoClient
 import random
 import json
@@ -13,7 +13,7 @@ random.seed()
 
 @app.route('/')
 def index():
-    return 'TODO: home page'
+    return render_template('index.html')
 
 
 @app.route('/get_shapeways')
