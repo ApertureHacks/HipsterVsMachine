@@ -36,12 +36,10 @@ function run_game() {
   var round = 0;
 
   var click_etsy = function() {
-    $(this).off();
     votes.etsy++;
     next_round();
   };
   var click_shapeways = function() {
-    $(this).off();
     votes.shapeways++;
     next_round();
   };
@@ -53,8 +51,8 @@ function run_game() {
   };
 
   var next_round = function() {
-    // $('#left-button').off();
-    // $('#right-button').off();
+    $('#left-button').off();
+    $('#right-button').off();
 
     if (round++ >= rounds) {
       return endgame();
