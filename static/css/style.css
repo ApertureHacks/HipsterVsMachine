@@ -26,6 +26,10 @@ div.row-game {
     width: 300px;
 }
 
+div#battle-zone {
+    margin-top: 25px;
+}
+
 img.fighter {
     max-height: 200px;
 }
