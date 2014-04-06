@@ -48,6 +48,16 @@ function run_game() {
     console.log(round);
     console.log(votes);
     console.log(seen_items);
+
+    $('#results-table').css('display', '');
+    for (var i = 0; i < seen_items.etsy.length; i++) {
+      console.log('in table for loop ' + i);
+      etsy_item = seen_items.etsy[i];
+      shapeways_item = seen_items.shapeways[i];
+      etsy_link = '<a href="' + etsy_item.url + '">' + etsy_item.name + '</a>';
+      shapeways_link = '<a href="' + shapeways_item.url + '">' + shapeways_item.name + '</a>';
+      $('#results-table').append('<tr><td>' + etsy_link + '</td><td>' + shapeways_link + '</td></tr>');
+    }
   };
 
   var next_round = function() {
