@@ -40,16 +40,17 @@ function run_game() {
   var votes = {etsy: 0, shapeways: 0};
   var rounds = 10;
   var round = 0;
+  var knockback = '20px';
 
   var robot_attack = function() {
     $robo = $('#robot');
     $hipster = $('#hipster');
     $robo.attr('src', '/static/imgs/robo_hit.png');
-    $hipster.animate({marginRight: '-=10px'}, 0);
+    $hipster.animate({marginRight: '-=' + knockback}, 250);
     document.getElementById('punch').play();
     setTimeout(function() {
       $robo.attr('src', '/static/imgs/robo_stand.png');
-      $hipster.animate({marginRight: '+=10px'}, 0);
+      $hipster.animate({marginRight: '+=' + knockback}, 250);
     }, 500);
   };
 
@@ -57,11 +58,11 @@ function run_game() {
     $robo = $('#robot');
     $hipster = $('#hipster');
     $hipster.attr('src', '/static/imgs/hipster_hit.png');
-    $robo.animate({marginLeft: '-=10px'}, 0);
+    $robo.animate({marginLeft: '-=' + knockback}, 250);
     document.getElementById('clank').play();
     setTimeout(function() {
       $hipster.attr('src', '/static/imgs/hipster_stand.png');
-      $robo.animate({marginLeft: '+=10px'}, 0);
+      $robo.animate({marginLeft: '+=' + knockback}, 250);
     }, 500);
   };
 
