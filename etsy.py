@@ -2,14 +2,14 @@ import requests
 import config
 
 url = "https://openapi.etsy.com/v2/"
-categories = {"jewlery": 68887482}
+categories = ["jewelry"]
 
 def getListings(category):
     listings = []
     if category in categories:
         req_url = url + "listings/active?api_key=" + config.key + \
-            "&includes=MainImage(url_fullxfull)&limit=50&category_id=" + \
-            categories[category]
+            "&includes=MainImage(url_fullxfull)&limit=50&category=" + \
+            category
     else:
         req_url = url + "listings/active?api_key=" + config.key + \
             "&includes=MainImage(url_fullxfull)&limit=50"
